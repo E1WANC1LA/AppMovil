@@ -1,0 +1,122 @@
+::ng-deep h1, ::ng-deep h2, ::ng-deep h3 {
+  color: #000000;
+}
+
+img {
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+}
+#main-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+
+.title {
+  color: #FFB800;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+
+ion-input {
+  color: #1A1A1A;
+}
+
+ion-button {
+  --background: #6200EE;
+  color: #FFFFFF;
+  
+
+}
+
+a {
+  color: #FFB800;
+  text-decoration: none;
+}
+
+ion-header {
+  --border-width: 0;
+  --box-shadow: none;
+}
+
+ion-toolbar {
+  --border-width: 0;
+  --box-shadow: none;
+  --border-color: transparent;
+  --background: transparent;
+  --ion-border-color: transparent;
+  border-bottom: none; 
+  box-shadow: none; 
+}
+
+
+ion-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegura que el texto no se recorte */
+  padding: 10px 0; /* Añade un poco de espacio alrededor del texto */
+}
+.toolbar-custom-color {
+  --background: #6200EE;
+}
+
+
+ion-header.md, ion-footer.md {
+  --box-shadow: none;
+}
+
+ion-header.ios, ion-footer.ios {
+  --border-color: transparent;
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 1.2rem;
+}
+
+/* Estilos responsivos */
+@media (prefers-color-scheme: dark) {
+  #container {
+    padding: 8px;
+    max-width: 90%;
+  }
+
+
+  h1, h2, h3 {
+    color: #ffffff;
+  }
+  .title {
+    font-size: 20px;
+  }
+
+  ion-card-title {
+    font-size: 18px;
+  }
+
+  ion-button {
+    --background: #6200EE;
+    color: #FFFFFF;
+    
+  
+  }
+}
+
