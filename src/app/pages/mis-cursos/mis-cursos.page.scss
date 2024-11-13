@@ -1,0 +1,145 @@
+#main-content {
+  background-color: #6200EE;
+  display: flex; /* Flexbox para el contenedor de tarjetas */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  padding: 16px; /* Espacio alrededor del contenedor */
+}
+
+.button-outline {
+  border-color: var(--ion-color-primary, #6200EE);
+  background: transparent;
+  color: var(--ion-color-primary, #6200EE); 
+}
+
+ion-toolbar {
+  --border-width: 0;
+  --box-shadow: none;
+  --border-color: transparent;
+  --background: transparent;
+  --ion-border-color: transparent;
+  border-bottom: none; /* Asegura que no haya borde inferior */
+  box-shadow: none; /* Asegura que no haya sombra */
+}
+
+
+
+ion-item{
+
+  background-color: #6200EE;
+
+}
+
+
+.curso-card {
+  display: flex; /* Para alinear el contenido dentro de la tarjeta */
+  flex-direction: column; /* Elementos apilados verticalmente */
+  justify-content: space-between; /* Espacio entre elementos */
+  align-items: center; /* Centra los elementos horizontalmente */
+  background-color: #f9f9f9; /* Color de fondo de la tarjeta */
+  border: 1px solid #ccc; /* Borde de las tarjetas */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 16px; /* Espacio interno */
+  margin: 8px; /* Espacio entre tarjetas */
+  width: calc(30% - 16px); /* Ancho de cada tarjeta en pantallas grandes */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  overflow: hidden; /* Asegura que no se muestre el contenido que sobresale */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .curso-card {
+    width: calc(80% - 16px); /* Ancho de cada tarjeta en pantallas pequeñas */
+  }
+}
+
+.curso-card:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.curso-imagen {
+  width: 100%; /* Asegura que la imagen ocupe el 100% del ancho de la tarjeta */
+  height: auto; /* Mantiene la relación de aspecto */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-bottom: 8px; /* Espacio entre la imagen y el texto */
+}
+
+.curso-info {
+  text-align: center; /* Centra el texto dentro del contenedor de información */
+}
+
+.curso-nombre {
+  font-weight: bold; /* Texto en negrita para el nombre del curso */
+  margin: 8px 0; /* Margen vertical para separar del resto del contenido */
+}
+
+.curso-descripcion,
+.curso-profesor {
+  font-size: 14px; /* Tamaño de fuente más pequeño para descripción y profesor */
+  color: #666; /* Color de texto más tenue */
+  margin: 4px 0; /* Espacio entre las líneas de texto */
+}
+
+
+.curso-card:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.curso-imagen {
+  width: 100%; /* Asegura que la imagen ocupe el 100% del ancho de la tarjeta */
+  height: auto; /* Mantiene la relación de aspecto */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+  margin-bottom: 8px; /* Espacio entre la imagen y el texto */
+}
+
+.curso-info {
+  text-align: center; /* Centra el texto dentro del contenedor de información */
+}
+
+.curso-nombre {
+  font-weight: bold; /* Texto en negrita para el nombre del curso */
+  margin: 8px 0; /* Margen vertical para separar del resto del contenido */
+}
+
+.curso-descripcion,
+.curso-profesor {
+  font-size: 14px; /* Tamaño de fuente más pequeño para descripción y profesor */
+  color: #666; /* Color de texto más tenue */
+  margin: 4px 0; /* Espacio entre las líneas de texto */
+}
+
+
+.custom-loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.loading-icon {
+  width: 100px; // Tamaño del ícono o animación
+  height: 100px;
+  margin-bottom: 10px;
+  animation: spin 1s linear infinite; // Puedes ajustar esta animación
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #333;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

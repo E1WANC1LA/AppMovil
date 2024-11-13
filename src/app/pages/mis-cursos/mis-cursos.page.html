@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" style="background-color: #6200EE;">
+  <ion-toolbar>
+    <ion-title style="color: #ffffff;">Cursos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+  <ion-item class="">
+    <ion-button (click)="IrCrearCurso()"  fill="outline" style="background-color: #6200EE; color: #ffffff;" ion-button>Crear Nuevo Curso</ion-button>
+  </ion-item>
+  </ion-list>
+  <div id="main-content" class="card-container">
+    
+    <ion-list>
+      <ion-item *ngFor="let curso of cursos">
+        <ion-thumbnail slot="start">
+          <img [src]="curso.imagen" alt="{{ curso.nombre }}"/>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ curso.nombre }}</h2>
+          <p>{{ curso.descripcion ? curso.descripcion : 'Sin descripción disponible' }}</p>
+          <p>Profesor: {{ curso.usuario.nombre_completo }}</p>
+          <ion-button style="background-color: #6200EE; color: #ffffff;" fill="outline" (click)="VerDetallesCurso(curso.id)">Ver detalles</ion-button>
+        </ion-label>
+      </ion-item>
+ 
+    </ion-list>
+  </div>
+  <div class="custom-loading-container" *ngIf="isLoading">
+    <img src="data:image/png;base64,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" alt="Cargando..." 
+    class="loading-icon"
+     >
+    <p class="loading-text">Cargando...</p>
+  </div>
+  
+</ion-content>
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button  (click)="IrInicioProfesor()">
+    <ion-icon style="color: #6200EE;" name="home"></ion-icon>
+    Inicio
+  </ion-tab-button>
+  <ion-tab-button (click)="IrMisCursos()">
+    <ion-icon style="color: #6200EE;" name="book"></ion-icon>
+    Mis Cursos
+  </ion-tab-button>
+  <ion-tab-button (click)="cerrarSesion()">
+    <ion-icon style="color: #6200EE;" name="exit"></ion-icon>
+    Cerrar Sesión
+  </ion-tab-button>
+</ion-tab-bar>
