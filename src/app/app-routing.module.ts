@@ -30,10 +30,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/inicio-alumno/inicio-alumno.module').then(m => m.InicioAlumnoPageModule),
     canActivate: [AuthGuard] 
   },
-  {
-    path: 'generar-qr',
-    loadChildren: () => import('./pages/generar-qr/generar-qr.module').then(m => m.GenerarQRPageModule)
-  },
+  // {
+  //   path: 'generar-qr',
+  //   loadChildren: () => import('./pages/generar-qr/generar-qr.module').then(m => m.GenerarQRPageModule)
+  // },
   {
     path: 'not-found',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
