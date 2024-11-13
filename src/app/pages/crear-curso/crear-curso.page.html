@@ -1,0 +1,33 @@
+<ion-header [translucent]="true" style="background-color: #6200EE;">
+  <ion-toolbar>
+    <ion-title>Crear Curso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="background-color: #ffffff;">
+  <div id="main-content">
+    <div id="container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Crear Curso</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input label="Sigla" labelPlacement="floating" id="siglaCurso" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Nombre" labelPlacement="floating" id="nombreCurso" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Institucion" labelPlacement="floating" id="institucionCurso" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Descripcion" labelPlacement="floating" id="descripcionCurso" type="text" required></ion-input>
+          </ion-item>
+          <ion-button expand="block" fill="clear" style="margin-top: 16px;" (click)="CrearCurso()">Crear Curso</ion-button>
+          <ion-button expand="block" fill="clear" (click)="IrMisCursos()" style="margin-top: 16px;">Cancelar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

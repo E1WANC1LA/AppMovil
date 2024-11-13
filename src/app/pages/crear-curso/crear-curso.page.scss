@@ -1,0 +1,96 @@
+#main-content {
+    display: flex;
+    background-color: #6200EE;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  
+  #container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: #6200EE;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .title {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  ion-card {
+    background-color: #6200EE;
+    box-shadow: none; /* Asegura que no haya sombra */
+  
+  }
+  
+  ion-card-title {
+    color: #ffffff;
+  }
+  
+  ion-item {
+    --background: #6200EE;
+  }
+  
+  ion-input {
+    color: #ffffff;
+  }
+  
+  ion-button {
+    --background: #6200EE;
+    --color: #ffffff;
+    
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  ion-header {
+    --border-width: 0;
+    --box-shadow: none;
+  }
+  
+  ion-toolbar {
+    --border-width: 0;
+    --box-shadow: none;
+    --border-color: transparent;
+    --background: transparent;
+    --ion-border-color: transparent;
+    border-bottom: none; /* Asegura que no haya borde inferior */
+    box-shadow: none; /* Asegura que no haya sombra */
+  }
+  
+  /* Estilos específicos para md y ios */
+  ion-header.md, ion-footer.md {
+    --box-shadow: none;
+  }
+  
+  ion-header.ios, ion-footer.ios {
+    --border-color: transparent;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    #container {
+      padding: 8px;
+      max-width: 90%;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    ion-card-title {
+      font-size: 18px;
+    }
+  
+    ion-button {
+      font-size: 14px;
+    }
+  }
