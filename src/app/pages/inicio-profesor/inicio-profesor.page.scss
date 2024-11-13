@@ -1,0 +1,105 @@
+#main-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  
+  #container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: #307FE2;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    color: #FFB800;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  ion-card {
+    background-color: #FFFFFF;
+  }
+  
+  ion-card-title {
+    color: #1A1A1A;
+  }
+  
+  ion-item {
+    --background: #FFFFFF;
+  }
+  
+  ion-input {
+    color: #1A1A1A;
+  }
+  
+  ion-button {
+    --background: #FFB800;
+    --color: #1A1A1A;
+  }
+  
+  a {
+    color: #FFB800;
+    text-decoration: none;
+  }
+  
+  ion-header {
+    --border-width: 0;
+    --box-shadow: none;
+  }
+  
+  ion-toolbar {
+    --border-width: 0;
+    --box-shadow: none;
+    --border-color: transparent;
+    --background: transparent;
+    --ion-border-color: transparent;
+    border-bottom: none; 
+    box-shadow: none; 
+  }
+
+
+  ion-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+    overflow: visible; /* Asegura que el texto no se recorte */
+    padding: 10px 0; /* Añade un poco de espacio alrededor del texto */
+  }
+  
+  ion-header.md, ion-footer.md {
+    --box-shadow: none;
+  }
+  
+  ion-header.ios, ion-footer.ios {
+    --border-color: transparent;
+  }
+
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    #container {
+      padding: 8px;
+      max-width: 90%;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    ion-card-title {
+      font-size: 18px;
+    }
+  
+    ion-button {
+      font-size: 14px;
+    }
+  }
+  
+  

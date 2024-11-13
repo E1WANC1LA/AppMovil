@@ -1,0 +1,30 @@
+<ion-header [translucent]="true" style="background-color: #6200EE;">
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" #content>
+  <ion-header style="box-shadow: none;">
+    <ion-toolbar>
+      <ion-text id="MensajeBienvenida" size="large" style="text-align: center;">Bienvenido</ion-text>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+
+
+
+<ion-tab-bar slot="bottom">
+  <ion-tab-button  (click)="IrInicioProfesor()">
+    <ion-icon style="color: #6200EE;" name="home"></ion-icon>
+    Inicio
+  </ion-tab-button>
+  <ion-tab-button (click)="IrMisCursos()">
+    <ion-icon style="color: #6200EE;" name="book"></ion-icon>
+    Mis Cursos
+  </ion-tab-button>
+  <ion-tab-button (click)="cerrarSesion()">
+    <ion-icon style="color: #6200EE;" name="exit"></ion-icon>
+    Cerrar Sesión
+  </ion-tab-button>
+</ion-tab-bar>

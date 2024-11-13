@@ -1,0 +1,40 @@
+<ion-header [translucent]="true" style="background-color: #6200EE;">
+  <ion-toolbar>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" style="background-color: #ffffff;">
+  <div id="main-content">
+    <div id="container">
+      <h1 class="title">Bienvenido a RegistrApp!</h1>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Registrate</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-input label="run" labelPlacement="floating" id="run" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Nombre" labelPlacement="floating" id="nombre" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Apellido" labelPlacement="floating" id="apellido" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input label="Correo" labelPlacement="floating" id="NombreUsuario" type="text" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-select label="Tipo de Usuario" id="tipoUsuario" interface="popover" style="color: #ffffff;">
+              <ion-select-option style="color: #ffffff;" value="1">Profesor</ion-select-option>
+              <ion-select-option style="color: #ffffff;" value="2">Alumno</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button expand="block" fill="clear" style="margin-top: 16px;" (click)="Registrarse()">Registrarse</ion-button>
+          <ion-button expand="block" fill="clear" routerLink="/login" style="margin-top: 16px;">¿Ya tienes cuenta? Inicia Sesion</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
