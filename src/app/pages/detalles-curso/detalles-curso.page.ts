@@ -17,10 +17,34 @@ export class DetallesCursoPage implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private servicioApi: ServicioApi) { }
 
   ngOnInit() {
-    console.log(1);
-     
-  }
+    const correo = localStorage.getItem('correo') || '';
+    const token = localStorage.getItem('token') || '';
+    this.route.queryParams.subscribe(params => {
+      const nombreUsuario = params['NombreUsuario'];
+      const cursoId = params['CursoId'];
+      console.log('NombreUsuario:', nombreUsuario);
+      console.log('CursoId:', cursoId);
+      this.servicioApi.obtenerCurso(cursoId,correo,token).subscribe(
+        data => {
+          console.log('Curso obtenido:', data);
+          if (data.message === "Success") {
+            this.mensaje = data.message;
+            this.cursoData = data.curso;
+            this.clasesData = data.clases;
+          } else {
+            alert('No se pudo obtener el curso: ' + data.message);
+          }
+        },
+        error => {
+          console.error('Error al obtener el curso:', error);
+          alert('Ocurrió un error al obtener el curso.');
+        }
+      );
+    });
 
+
+
+  }
 
  CrearClase() {
   console.log('CrearClase');
