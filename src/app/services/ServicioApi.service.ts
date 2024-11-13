@@ -43,6 +43,56 @@ export class ServicioApi {
       );
   }
 
+  crearCurso (nombre: string, descripcion: string, sigla: string, institucion: string, correo: string, token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    const body = { nombre, descripcion, sigla, institucion, correo , token};
+    return this.http.post<any>(this.apiUrl + 'cursos', body, { headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  RecuperarContrasena(correo: string): Observable<any> {
+    console.log('RecuperarContrasena:', correo);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { correo };
+    return this.http.post<any>(this.apiUrl + 'auth/recuperar', body, { headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+
+  obtenerCurso(cursoId: string, correo: string, token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+  
+    const curso = this.http.get<any>(`${this.apiUrl}cursos/${cursoId}`, { headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  
+    const clases = this.http.get<any>(`${this.apiUrl}cursos/${cursoId}/clase`, { headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  
+    // Usamos forkJoin para combinar los resultados de curso y clases.
+    return forkJoin({ curso, clases }).pipe(
+      // Agregamos un mensaje de éxito al resultado final
+      map(results => ({
+        message: 'Success',
+        curso: results.curso,
+        clases: results.clases
+      }))
+    );
+  }
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred!';
     if (error.error instanceof ErrorEvent) {
@@ -65,4 +115,3 @@ export class ServicioApi {
     return throwError(() => new Error(errorMessage));
   }
 }
-
