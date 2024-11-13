@@ -27,6 +27,50 @@ export class CrearCursoPage implements OnInit {
   }
 
   CrearCurso(){
-  console.log("Crear Curso");
+    let nombreCurso = document.getElementById('nombreCurso') as HTMLInputElement;
+    let descripcionCurso = document.getElementById('descripcionCurso') as HTMLInputElement;
+    let siglaCurso = document.getElementById('siglaCurso') as HTMLInputElement;
+    let institucionCurso = document.getElementById('institucionCurso') as HTMLInputElement;
+    let nombre = nombreCurso.value;
+    let descripcion = descripcionCurso.value;
+    let sigla = siglaCurso.value;
+    let institucion = institucionCurso.value;
+    let msg = '';
+    if (nombre === '') {
+      msg += 'Debes ingresar un Nombre\n';
+    }
+    if (descripcion === '') {
+      msg += 'Debes ingresar una Descripción\n';
+    }
+    if (sigla === '') {
+      msg += 'Debes ingresar una Sigla\n';
+    }
+    if (institucion === '') {
+      msg += 'Debes ingresar una Institución\n';
+    }
+    if (msg !== '') {
+      console.log(nombre, descripcion, sigla, institucion);
+      alert(msg);
+      return;
+    }
+
+    this.ServicioApi.crearCurso(nombre, descripcion, sigla, institucion, localStorage.getItem('correo') as string, localStorage.getItem('token') as string).subscribe(
+      data => {
+
+        console.log('Login successful:', data);
+        if (data.message === "Curso creado exitosamente") {
+          alert('Curso creado exitosamente');
+          this.Router.navigate(['/mis-cursos']);
+
+        } else {
+          alert('Creacion Fallida: ' + data.message);
+        }
+      },
+      error => {
+        console.error('Login error:', error);
+        alert('ERROR.');
+      }
+    );
+
   }
 }
