@@ -1,0 +1,22 @@
+.not-found-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  
+    h1 {
+      font-size: 6rem;
+      margin: 0;
+    }
+  
+    p {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+  
+    ion-button {
+      margin-top: 2rem;
+    }
+  }
