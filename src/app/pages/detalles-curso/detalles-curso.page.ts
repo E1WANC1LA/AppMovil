@@ -46,7 +46,38 @@ export class DetallesCursoPage implements OnInit {
 
   }
 
- CrearClase() {
-  console.log('CrearClase');
- }
+ CrearClase(idCurso: any) {
+  let fechaClase = (document.getElementById('fechaClase') as HTMLInputElement).value;
+  let horaClase = (document.getElementById('horaClase') as HTMLInputElement).value;
+  let horaFinClase = (document.getElementById('horaFinClase') as HTMLInputElement).value;
+  if (fechaClase === '' || horaClase === '' || horaFinClase === '') {
+    alert('Debe completar todos los campos.');
+    return;
+  }
+  const correo = localStorage.getItem('correo') || '';
+  const token = localStorage.getItem('token') || '';
+  this.servicioApi.crearClase(idCurso, fechaClase, horaClase, horaFinClase, correo, token).subscribe(
+    data => {
+      console.log('Clase creada:', data);
+      if (data.message === "Clase creada exitosamente") {
+        alert('Clase creada exitosamente.');
+        this.ngOnInit();
+      } else {
+        alert('No se pudo crear la clase: ' + data.message);
+      }
+    },
+    error => {
+      console.error('Error al crear la clase:', error);
+      alert('Ocurrió un error al crear la clase.');
+    }
+  );
+}
+
+Volver() {
+  this.router.navigate(['/mis-cursos']);
+}
+
+GenerarQR(codigoClase: any) {
+  console.log('GenerarQR:', codigoClase);
+}
 }
