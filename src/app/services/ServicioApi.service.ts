@@ -93,6 +93,19 @@ export class ServicioApi {
     );
   }
 
+
+  crearClase(id: number, fecha: string, hora_inicio: string, hora_termino: string, correo: string, token: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    });
+    const body = { fecha, hora_inicio, hora_termino, correo };
+    return this.http.post<any>(`${this.apiUrl}cursos/${id}/clase`, body, { headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   private handleError(error: HttpErrorResponse): Observable<never> {
     let errorMessage = 'An unknown error occurred!';
     if (error.error instanceof ErrorEvent) {
@@ -114,4 +127,8 @@ export class ServicioApi {
     console.error(errorMessage);
     return throwError(() => new Error(errorMessage));
   }
+
+
+
+  
 }
