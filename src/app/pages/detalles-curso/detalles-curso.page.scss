@@ -15,6 +15,37 @@ ul {
 li {
   margin-bottom: 10px;
 }
+.clase-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px; /* Reduce el padding interno */
+  border: 1px solid #ccc; /* Límite visual */
+  border-radius: 6px; /* Bordes suaves */
+  margin-bottom: 6px; /* Menor espacio entre elementos */
+  max-width: 300px; /* Reduce el ancho máximo */
+  font-size: 12px; /* Reduce el tamaño del texto */
+}
+
+.clase-list-container {
+  max-width: 400px; /* Limita el ancho total del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  padding: 0 16px; /* Agrega espacio interno a los lados */
+}
+
+.clase-info {
+  flex: 1;
+  margin-right: 8px; /* Espacio entre texto y botón */
+}
+
+.qr-button {
+  --width: auto; /* Botón ajustado a su contenido */
+  --padding-start: 4px;
+  --padding-end: 4px;
+  --min-height: 24px; /* Altura mínima más pequeña */
+  font-size: 10px; /* Texto más pequeño */
+}
+
 
 p {
   font-size: 16px;
@@ -119,4 +150,3 @@ ion-header.ios, ion-footer.ios {
   
   }
 }
-
