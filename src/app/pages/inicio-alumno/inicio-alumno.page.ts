@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BarcodeScanningModalComponent } from './barcode-scanning-modal.component';
 import { AlertController } from '@ionic/angular';
 import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
-
+import { ServicioApi } from 'src/app/services/ServicioApi.service';
 
 @Component({
   selector: 'app-inicio-alumno',
@@ -25,6 +25,7 @@ export class InicioAlumnoPage implements OnInit {
     private loadingController: LoadingController,
     private modalController: ModalController,
     private toastController: ToastController,
+    private servicioApi: ServicioApi,
   ) { }
 
   ngOnInit() {
@@ -69,7 +70,20 @@ export class InicioAlumnoPage implements OnInit {
     if (data) {
       this.scanResult = data?.barcode?.displayValue;
       if (this.scanResult) {
-        alert('Escaneado: '+ this.scanResult);
+        this.servicioApi.RegistrarAsistencia(this.scanResult, localStorage.getItem('correo') as string, localStorage.getItem('token') as string).subscribe(
+          data => {
+            console.log('Asistencia registrada:', data);
+            if (data.message === "Asistencia registrada con éxito") {
+              alert('Asistencia registrada con éxito.');
+            } else if (data.message === "Ya has registrado tu asistencia") {
+              alert('Ya has registrado tu asistencia');
+            }
+          },
+          error => {
+            console.error('Error al registrar la asistencia:', error);
+            alert('Ocurrió un error al registrar la asistencia.');
+          }
+        );
       }
     }
   }
