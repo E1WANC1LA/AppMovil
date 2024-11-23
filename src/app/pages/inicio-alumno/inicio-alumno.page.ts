@@ -5,6 +5,7 @@ import { BarcodeScanningModalComponent } from './barcode-scanning-modal.componen
 import { AlertController } from '@ionic/angular';
 import { BarcodeScanner } from '@capacitor-mlkit/barcode-scanning';
 import { ServicioApi } from 'src/app/services/ServicioApi.service';
+import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-inicio-alumno',
@@ -16,6 +17,10 @@ export class InicioAlumnoPage implements OnInit {
   NombreUsuario: string | null = null;
   scanResult: string = '';
   isScanning: boolean = false;
+  mostrarEscanear: boolean = true; // Inicialmente, el botón está visible
+
+  private readonly posicionEsperada = { lat: -33.499988525844856, lng: -70.61648427531809 }; 
+  private readonly margenDistancia = 500; 
 
   constructor(
     private route: ActivatedRoute, 
@@ -26,6 +31,7 @@ export class InicioAlumnoPage implements OnInit {
     private modalController: ModalController,
     private toastController: ToastController,
     private servicioApi: ServicioApi,
+    
   ) { }
 
   ngOnInit() {
@@ -41,6 +47,54 @@ export class InicioAlumnoPage implements OnInit {
       BarcodeScanner.checkPermissions().then();
       BarcodeScanner.removeAllListeners();
     }
+  }
+  async verificarPosicion() {
+    try {
+      let position = await Geolocation.getCurrentPosition({
+        enableHighAccuracy: true, // Usar alta precisión
+        timeout: 10000, // Esperar hasta 10 segundos para obtener una ubicación precisa
+        maximumAge: 0, // Fuerza la actualización; no usa caché
+
+      });
+  
+      console.log('Posición actual:', position.coords.latitude, position.coords.longitude);
+      console.log(`Coordenadas esperadas: ${this.posicionEsperada.lat}, ${this.posicionEsperada.lng}`);
+  
+      let distancia = this.calcularDistancia(
+        position.coords.latitude,
+        position.coords.longitude,
+        this.posicionEsperada.lat,
+        this.posicionEsperada.lng
+      );
+  
+      console.log(`Distancia calculada: ${distancia} metros`);
+  
+      if (distancia <= this.margenDistancia) {
+        this.startScan();
+      } else {
+        this.mostrarEscanear = false;
+        alert(`Estás fuera del margen permitido. Distancia: ${distancia.toFixed(2)} metros`);
+      }
+    } catch (error) {
+      console.error('Error al obtener la ubicación:', error);
+      alert('Error al obtener la ubicación');
+    }
+  }
+
+  private calcularDistancia(lat1: number, lng1: number, lat2: number, lng2: number): number {
+    let R = 6371e3; // Radio de la Tierra en metros
+    let rad = Math.PI / 180;
+    let φ1 = lat1 * rad;
+    let φ2 = lat2 * rad;
+    let Δφ = (lat2 - lat1) * rad;
+    let Δλ = (lng2 - lng1) * rad;
+
+    let a =
+      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    return R * c; // Distancia en metros
   }
 
   ionViewDidEnter() {
