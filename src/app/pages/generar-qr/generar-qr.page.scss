@@ -1,0 +1,177 @@
+ion-segment {
+    margin-top: 20px;
+}
+
+.segment {
+    padding: 30px 5px;
+}
+
+.submit {
+    height: 44px;
+    --border-radius: 10px;
+    --background: var(--ion-color-tertiary);
+}
+
+.scan-label {
+    margin: 25px 0;
+}
+
+img {
+    width: 200px;
+}
+
+.result {
+    color: black;
+    border: 1px dashed var(--ion-color-medium);
+    border-radius: 10px;
+    margin: 30px 0;
+
+    p {
+        color: var(--ion-color-tertiary);
+        margin-bottom: 5px;
+        font-size: 11px;
+    }
+
+    h6 {
+        margin-top: 0;
+    }
+}
+
+ion-button {
+    text-transform: none;
+}
+
+ion-textarea {
+    --highlight-color-valid: var(--ion-color-tertiary);
+    text-align: start;
+}
+
+#qrImage {
+    padding: 20px 0;
+}
+
+.qr-wrapper {
+    width: 230px;
+    min-height: 230px;
+    background: #6200EE;
+    border-radius: 20px;
+}
+
+.qr-placeholder {
+    width: 60px;
+}
+
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+#main-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  
+  
+  #container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: #6200EE;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    color: #FFB800;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  ion-card {
+    background-color: #6200EE;
+  }
+  
+  ion-card-title {
+    color: #1A1A1A;
+  }
+  
+  ion-item {
+    --background: #FFFFFF;
+  }
+  
+  ion-input {
+    color: #1A1A1A;
+  }
+  
+  ion-button {
+    --background: #6200EE;
+    --color: #ffffff;
+  }
+  
+  a {
+    color: #6200EE;
+    text-decoration: none;
+  }
+  
+  ion-header {
+    --border-width: 0;
+    --box-shadow: none;
+  }
+  
+  ion-toolbar {
+    --border-width: 0;
+    --box-shadow: none;
+    --border-color: transparent;
+    --background: transparent;
+    --ion-border-color: transparent;
+    border-bottom: none; /* Asegura que no haya borde inferior */
+    box-shadow: none; /* Asegura que no haya sombra */
+  }
+  
+
+  ion-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+    overflow: visible; /* Asegura que el texto no se recorte */
+    padding: 10px 0; /* Añade un poco de espacio alrededor del texto */
+  }
+  
+  ion-header.md, ion-footer.md {
+    --box-shadow: none;
+  }
+  
+  ion-header.ios, ion-footer.ios {
+    --border-color: transparent;
+  }
+
+  /* Estilos responsivos */
+  @media (max-width: 600px) {
+    #container {
+      padding: 8px;
+      max-width: 90%;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  
+    ion-card-title {
+      font-size: 18px;
+    }
+  
+    ion-button {
+      font-size: 14px;
+    }
+  }
+  
+  

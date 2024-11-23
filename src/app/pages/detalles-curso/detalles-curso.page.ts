@@ -20,9 +20,8 @@ export class DetallesCursoPage implements OnInit {
     const correo = localStorage.getItem('correo') || '';
     const token = localStorage.getItem('token') || '';
     this.route.queryParams.subscribe(params => {
-      const nombreUsuario = params['NombreUsuario'];
       const cursoId = params['CursoId'];
-      console.log('NombreUsuario:', nombreUsuario);
+      this.CursoId = cursoId;
       console.log('CursoId:', cursoId);
       this.servicioApi.obtenerCurso(cursoId,correo,token).subscribe(
         data => {
@@ -78,6 +77,14 @@ Volver() {
 }
 
 GenerarQR(codigoClase: any) {
-  console.log('GenerarQR:', codigoClase);
+  console.log('Generar QR:', codigoClase);
+  console.log('CursoId:', this.CursoId);
+  this.router.navigate(['/generar-qr'], { 
+    queryParams: { 
+      CodigoClase: codigoClase, 
+      CursoId: this.CursoId 
+    } 
+  });
+  
 }
 }

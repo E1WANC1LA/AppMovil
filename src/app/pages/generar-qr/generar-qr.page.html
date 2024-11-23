@@ -1,0 +1,18 @@
+<ion-header [translucent]="true" style="background-color: #6200EE;">
+  <ion-toolbar>
+    <ion-title style="color: #ffffff;">Generar QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+<div id="qrImage">
+  <div class="d-flex-center">
+    <div class="d-flex-center qr-wrapper">
+      <qr-code [value]="QrTexto" size="190" errorCorrectionLevel="M"/>
+      <img *ngIf="!QrTexto" class="qr-placeholder" src="assets/images/qr.webp" alt="">
+    </div>
+  </div>
+  <ion-button expand="full" style="background-color: #6200EE; color: #ffffff;" (click)="VolverDetallesCurso()">Volver al inicio</ion-button>
+
+</div>
+</ion-content>

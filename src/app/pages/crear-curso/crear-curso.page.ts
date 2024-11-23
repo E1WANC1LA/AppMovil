@@ -60,7 +60,7 @@ export class CrearCursoPage implements OnInit {
         console.log('Login successful:', data);
         if (data.message === "Curso creado exitosamente") {
           alert('Curso creado exitosamente');
-          this.Router.navigate(['/mis-cursos']);
+          this.Router.navigate(['/mis-cursos', { reload: true }]);
 
         } else {
           alert('Creacion Fallida: ' + data.message);
