@@ -14,13 +14,13 @@
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button (click)="startScan()">
+    <ion-tab-button *ngIf="mostrarEscanear" (click)="verificarPosicion()">
       <ion-icon style="color: #6200EE;" name="scan-outline"></ion-icon>
       Escanear QR
     </ion-tab-button>
     <ion-tab-button (click)="cerrarSesion()">
       <ion-icon style="color: #6200EE;" name="exit"></ion-icon>
-      Cerrar Sesión
+      Cerrar SesiÃ³n
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
