@@ -1,6 +1,7 @@
 #main-content {
   background-color: #6200EE;
   display: flex; /* Flexbox para el contenedor de tarjetas */
+  border-radius: 15px; /* Bordes redondeados */
   flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas */
   justify-content: center; /* Centra las tarjetas horizontalmente */
   padding: 16px; /* Espacio alrededor del contenedor */
@@ -18,10 +19,27 @@ ion-toolbar {
   --border-color: transparent;
   --background: transparent;
   --ion-border-color: transparent;
+  border-radius: 20px; /* Bordes redondeados */
   border-bottom: none; /* Asegura que no haya borde inferior */
   box-shadow: none; /* Asegura que no haya sombra */
 }
 
+ion-header {
+  border-radius: 20px; /* Bordes redondeados */
+  overflow: hidden; /* Para cortar contenido sobrante */
+}
+
+ion-list{
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+ion-button {
+  --border-color: transparent; /* Ionic usa variables CSS */
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  outline: none; /* Elimina el borde morado del enfoque */
+  box-shadow: none;
+}
 
 
 ion-item{
@@ -38,11 +56,11 @@ ion-item{
   align-items: center; /* Centra los elementos horizontalmente */
   background-color: #f9f9f9; /* Color de fondo de la tarjeta */
   border: 1px solid #ccc; /* Borde de las tarjetas */
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 20px; /* Bordes redondeados */
   padding: 16px; /* Espacio interno */
   margin: 8px; /* Espacio entre tarjetas */
   width: calc(30% - 16px); /* Ancho de cada tarjeta en pantallas grandes */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  box-shadow: 0 2px 5px rgba(255, 249, 249, 0.1); /* Sombra para dar profundidad */
   overflow: hidden; /* Asegura que no se muestre el contenido que sobresale */
 }
 
@@ -60,7 +78,7 @@ ion-item{
 .curso-imagen {
   width: 100%; /* Asegura que la imagen ocupe el 100% del ancho de la tarjeta */
   height: auto; /* Mantiene la relación de aspecto */
-  border-radius: 8px; /* Bordes redondeados para la imagen */
+  border-radius: 15px; /* Bordes redondeados para la imagen */
   margin-bottom: 8px; /* Espacio entre la imagen y el texto */
 }
 
@@ -107,7 +125,6 @@ ion-item{
   color: #666; /* Color de texto más tenue */
   margin: 4px 0; /* Espacio entre las líneas de texto */
 }
-
 
 .custom-loading-container {
   position: fixed;
@@ -132,8 +149,14 @@ ion-item{
 
 .loading-text {
   font-size: 18px;
-  color: #333;
+  border-radius: 15px; /* Bordes redondeados */
+  color: #010101;
 }
+
+ion-tab-bar {
+  border-radius: 15px; /* Bordes redondeados */
+}
+
 
 @keyframes spin {
   from {
