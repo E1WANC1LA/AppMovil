@@ -22,6 +22,11 @@
     font-size: 24px;
     margin-bottom: 16px;
   }
+
+  ion-header {
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden; /* Para cortar contenido sobrante */
+  }
   
   ion-card {
     background-color: #FFFFFF;
@@ -99,6 +104,10 @@
   
     ion-button {
       font-size: 14px;
+    }
+
+    ion-tab-bar {
+      border-radius: 15px; /* Bordes redondeados */
     }
   }
   

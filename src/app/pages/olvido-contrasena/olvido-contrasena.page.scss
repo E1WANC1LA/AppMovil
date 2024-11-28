@@ -22,6 +22,15 @@
   margin-bottom: 16px;
 }
 
+ion-padding {
+    border-radius: 10px 20px 30px 40px;  /* Redondeo específico para cada esquina: arriba-izquierda, arriba-derecha, abajo-derecha, abajo-izquierda */
+}
+
+ion-header {
+  border-radius: 20px; /* Bordes redondeados */
+  overflow: hidden; /* Para cortar contenido sobrante */
+}
+
 ion-card {
   background-color: #6200EE;
   box-shadow: none; /* Asegura que no haya sombra */
@@ -43,7 +52,11 @@ ion-input {
 ion-button {
   --background: #6200EE;
   --color: #ffffff;
-  
+  --border-color: transparent; /* Ionic usa variables CSS */
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  outline: none; /* Elimina el borde morado del enfoque */
+  box-shadow: none;
 }
 
 a {
@@ -62,11 +75,11 @@ ion-toolbar {
   --border-color: transparent;
   --background: transparent;
   --ion-border-color: transparent;
-  border-bottom: none; /* Asegura que no haya borde inferior */
-  box-shadow: none; /* Asegura que no haya sombra */
+  border-bottom: none;
+  box-shadow: none;
 }
 
-/* Estilos específicos para md y ios */
+
 ion-header.md, ion-footer.md {
   --box-shadow: none;
 }
@@ -75,7 +88,7 @@ ion-header.ios, ion-footer.ios {
   --border-color: transparent;
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 600px) {
   #container {
     padding: 8px;

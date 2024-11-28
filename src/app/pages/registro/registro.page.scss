@@ -22,11 +22,26 @@
   margin-bottom: 16px;
 }
 
-ion-card {
-  background-color: #6200EE;
-  box-shadow: none; /* Asegura que no haya sombra */
-
+h1 {
+  border: 2px solid #ffffff;  /* Borde blanco de 2px */
+  padding: 10px;              /* Espaciado interno entre el texto y el borde */
+  border-radius: 5px;         /* Esquinas redondeadas (opcional) */
+  text-align: center;         /* Centrar el texto (opcional) */
 }
+
+
+ion-header {
+  border-radius: 20px; /* Bordes redondeados */
+  overflow: hidden; /* Para cortar contenido sobrante */
+}
+
+ion-card {
+  background-color: #6200EE; /* Color de fondo */
+  border: 2px solid #FFFFFF; /* Borde blanco de 2px */
+  border-radius: 8px; /* Esquinas redondeadas opcionales */
+  padding: 10px; /* Espaciado interno */
+}
+
 
 ion-card-title {
   color: #ffffff;
@@ -41,10 +56,14 @@ ion-input {
 }
 
 ion-button {
-  --background: #6200EE;
-  --color: #ffffff;
-  
+  --background: #6200EE;      /* Color de fondo */
+  --color: #ffffff;           /* Color del texto */
+  --border-width: 2px;        /* Grosor del borde */
+  --border-style: solid;      /* Estilo del borde */
+  --border-color: #ffffff;    /* Color del borde */
+  border-radius: 8px;         /* Esquinas redondeadas opcionales */
 }
+
 
 a {
   color: #ffffff;
