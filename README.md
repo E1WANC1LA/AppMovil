@@ -3,6 +3,8 @@ Como iniciar:
 2. Descargar Ionic
 3. Descargar el proyecto
 4. "ionic s" en la consola para iniciar
+
+   
 Como Iniciar en android:
 1. Instalar android studio
 2. Instalar Capacitor
