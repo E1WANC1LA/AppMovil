@@ -12,3 +12,9 @@ Como Iniciar en android:
 4. En la consola colocar "ionic cap open android" para abrir la app en android studio
 5. En android studio, ir a la barra superior de herramientas y luego a generar debug apk
 6. Instalar el archivo apk generado en el celular
+
+
+
+
+Descargar APK:
+Puedes descargar el archivo APK desde el siguiente enlace: [Descargar APK](https://github.com/E1WANC1LA/AppMovil/tree/main/APK).
